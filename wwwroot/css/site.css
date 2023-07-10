@@ -23,6 +23,8 @@ nav
 {
     background-color: #37BBED;
     width: 100%;
+    display: flex;
+    justify-content:space-evenly;
 } 
 nav ul
 {
@@ -35,6 +37,7 @@ nav ul li
     display: inline; 
     padding: 0px;
     background-color: #37BBED;
+    vertical-align: middle;
 }
 nav ul li a:hover:not(.Presente a)
 {
