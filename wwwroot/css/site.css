@@ -42,6 +42,7 @@ nav ul li a:hover:not(.Presente a)
     text-decoration:underline;
     border-radius: 30px;
     padding: 20px 50px;
+    text-shadow: 0 0 5px #37BBED;
 }
 nav ul li a
 {
