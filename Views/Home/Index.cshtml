@@ -1,26 +1,16 @@
-﻿<div>
-    @{
-        ViewData["Title"] = "Index";
-    }
-    <nav>
+﻿ <nav>
         <ul>
             <li class="Presente"><a href='@Url.Action("Index")'>🇦🇷</a></li>
             <li><a href='@Url.Action("Creditos")'>Credits</a></li>
-            <li><a href='@Url.Action("Eleccionesinfo")'>Elecciones 2023</a></li>
+            <li><a href='@Url.Action("EleccionesInfo")'>Elecciones 2023</a></li>
         </ul>
-    </nav> 
+</nav> 
+<div>
+    @{
+        ViewData["Title"] = "Index";
+    }
+   
     <section>
-        @foreach (string partido in ViewBag.Paquetes.Keys)
-{
-    <div>
-    <h3>@partido</h3>
-   <img src="imgs/hoteles/@ViewBag.Paquetes[destino].Hotel"> 
-   <img src="imgs/aerolineas/@ViewBag.Paquetes[destino].Aereo">
-   <img src="imgs/excursiones/@ViewBag.Paquetes[destino].Excursion"><br>
-   <div class="eliminar">
-   <a href='@Url.Action("EliminarPaquete", new {destino=destino})'>Eliminar Paquete</a>
-   </div>
-   </div>
-}
+    
     </section>
 </div>

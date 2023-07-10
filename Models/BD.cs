@@ -38,7 +38,8 @@ public class BD{
         }
         return null;
     }
-    public static List<Partido> ListarPartidos(){
+    public static List<Partido> ListarPartidos()
+    {
         List <Partido> ListPartidos = null;
         using (SqlConnection db = new SqlConnection(ConnectionString)){
             string sql = "SELECT * FROM Partido";
