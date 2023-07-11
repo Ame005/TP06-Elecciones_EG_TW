@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body>
+        <nav>
+        <ul>
+            <li><a href='@Url.Action("Index")'><img src="~/img/argentina.png" height="35px"></a></li>
+            <li><a href='@Url.Action("Creditos")'>Credits</a></li>
+            <li><a href='@Url.Action("Elecciones")'>Elecciones 2023</a></li>
+        </ul>
+        </nav> 
         <div style="padding:20px 10px 0px 10px;">
             @RenderBody()
         </div>
