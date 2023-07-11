@@ -19,3 +19,11 @@ footer {
   bottom: 0; 
   margin: 0;
 }
+
+/*CSS INDEX*/
+.index-partido{
+  border: 2px solid black;
+  background-color: darkgrey;
+}
+
+/*CSS DetallePartido*/

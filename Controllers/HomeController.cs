@@ -6,7 +6,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        ViewBag.detallePartido = BD.ListarPartidos();
+        ViewBag.ListaPartido = BD.ListarPartidos();
         return View();
     }
     public IActionResult VerDetallePartido(int idPartido){
@@ -28,6 +28,10 @@ public class HomeController : Controller
         ViewBag.detallePartido = BD.VerInfoPartido(candidato.IdPartido);
         ViewBag.detalleCandidato = BD.ListarCandidatos(candidato.IdPartido);
         return RedirectToAction("DetallePartido", new { idPartido = candidato.IdPartido});
+    }
+    public IActionResult EliminarPartido(int idPartido){
+        BD.EliminarPartido(idPartido);
+        return View(Index);
     }
     public IActionResult EliminarCandidato(int idCandidato, int idPartido){
         /*eliminar candidato
