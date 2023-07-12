@@ -17,7 +17,7 @@ public class BD{
         int regEliminado = 0;
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
-            string sql = "DELETE FROM Candidato WHERE IdCandidato = @pidCandidato";
+            string sql = "DELETE * FROM Candidato WHERE IdCandidato = @pidCandidato";
             regEliminado = db.Execute(sql, new { pidCandidato = idCandidato });
         }
         return regEliminado;
