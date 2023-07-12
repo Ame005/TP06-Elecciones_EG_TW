@@ -46,42 +46,4 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
-nav
-{
-    background-color: #37BBED;
-    width: 100%;
-    display: flex;
-    justify-content:space-evenly;
-} 
-nav ul
-{
-    margin: 0px;
-    padding: 20px 3px;
-}
-nav ul li
-{
-    margin: 0px;
-    display: inline; 
-    padding: 0px;
-    background-color: #37BBED;
-    vertical-align: middle;
-}
-nav ul li a:hover:not(.Presente a)
-{
-    margin: 0px;
-    text-decoration:underline;
-    border-radius: 30px;
-    padding: 20px 50px;
-    text-shadow: 0 0 5px #37BBED;
-}
-nav ul li a
-{
-    margin: 0px;
-    font-size: 20px;
-    padding: 20px 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    list-style-type: none;
-    text-decoration: none;
-    text-align: center;
-    color: #FFFF;
-}
+

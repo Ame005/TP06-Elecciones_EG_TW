@@ -19,11 +19,110 @@ footer {
   bottom: 0; 
   margin: 0;
 }
-
+*{
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/*nav*/
+nav
+{
+    background-color: #37BBED;
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+} 
+nav ul
+{
+    margin: 0px;
+    padding: 20px 3px;
+}
+nav ul li
+{
+    margin: 0px;
+    display: inline; 
+    padding: 0px;
+    background-color: #37BBED;
+    vertical-align: middle;
+}
+nav ul li a:hover:not(.Presente a)
+{
+    margin: 0px;
+    text-decoration:underline;
+    border-radius: 30px;
+    padding: 20px 50px;
+    text-shadow: 0 0 5px #37BBED;
+}
+nav ul li a
+{
+    margin: 0px;
+    font-size: 20px;
+    padding: 20px 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    color: #FFFF;
+}
 /*CSS INDEX*/
-.index-partido{
+.lista-partidos-candidatos{
   border: 2px solid black;
-  background-color: darkgrey;
+  background-color: #FFF;
+  width: 20%;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lista-partidos-candidatos h1
+{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+  color: #0087b8;
+  text-align: center;
+}
+.lista-partidos-candidatos img
+{
+  width: 300px;
+  height: auto;
+  margin: 5px;
+}
+
+.partidoOcandidato{
+  margin-left: 25px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*CSS DetallePartido*/
+.info-partido{
+  margin: 3%,0,3%,2%;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-around;
+}
+
+.partido-especificaciones{
+  
+}
+
+/*Formulario*/
+.gran-form{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.formulario
+{
+  margin-bottom: 25px;
+  padding: 15px;
+  width: 100%;
+  background-color: #dcf6ff;
+  border-radius: 20px;
+  border: 2px solid #96b8c5;
+}
+.gran-form input [type="submit"]{
+  background-color: #96b8c5;
+  border: #96b8c5;
+  font-size: 150%;
+}

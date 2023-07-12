@@ -1,5 +1,26 @@
-<body>
-    <article>
-        
-    </article>
-</body>
+<div>
+    <section class="info-partido">
+        <div>
+            <img src="@ViewBag.detallePartido.Logo" width="100%" height="auto">
+        </div>
+        <div class="partido-especificaciones">
+        <h1>@ViewBag.detallePartido.Nombre</h1>
+            <p>Toca <a href="@ViewBag.detallePartido.SitioWeb">aqui </a>para mas informacion</p>
+            <p><b>Fecha de fundacion:</b>@ViewBag.detallePartido.FechaFundacion</p>
+            <p><b>Cantidad de diputados:</b>@ViewBag.detallePartido.CantidadDiputados</p>
+            <p><b>Cantidad de senadores:</b>@ViewBag.detallePartido.CantidadSenadores</p>
+        </div>
+    </section>
+    <section class="lista-candidatos">
+        @foreach (Candidato item in ViewBag.partidoCandidato)
+        {
+            <section class="candidato-particular">
+                <a href='@Url.Action("VerDetalleCandidato", new {idPartido = ViewBag.detallePartido.IdPartido})'>
+                <img src="@item.Foto">
+                <h1>@item.Nombre @item.Apellido</h1>
+                </a>
+            </section>
+        }
+        <a href='@Url.Action("AgregarCandidato")'><img src="~/img/sum-icon.png"></a>
+    </section>
+</div>

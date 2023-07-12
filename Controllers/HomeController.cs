@@ -22,12 +22,21 @@ public class HomeController : Controller
         ViewBag.ListaIdPartidos = idPartido;
         return View("CandidatoFormulario");
     }
+    public IActionResult AgregarPartido(){
+        return View("PartidoFormulario");
+    }
     [HttpPost]
     public IActionResult GuardarCandidato(Candidato candidato){
         BD.AgregarCandidato(candidato);
         ViewBag.detallePartido = BD.VerInfoPartido(candidato.IdPartido);
         ViewBag.detalleCandidato = BD.ListarCandidatos(candidato.IdPartido);
         return RedirectToAction("DetallePartido", new { idPartido = candidato.IdPartido});
+    }
+    [HttpPost]
+    public IActionResult GuardarPartido(Partido partido){
+        BD.AgregarPartido(partido);
+        ViewBag.ListaPartido = BD.ListarPartidos();
+        return View("Index");
     }
     public IActionResult EliminarPartido(int idPartido){
         BD.EliminarPartido(idPartido);

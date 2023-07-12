@@ -2,23 +2,18 @@
     @{
         ViewData["Title"] = "Index";
     }
+    <main class="lista-partidos-candidatos">
    @foreach (Partido item in ViewBag.ListaPartido)
    {
-    <section class="index-partido">
-    <img src="@item.Logo">
-    <h1>@item.Nombre</h1>
-    <a href='@Url.Action("VerDetallePartido",new {idPartido = item.IdPartido})'></a>
-    
+    <section class="partidoOcandidato">
+        <a href='@Url.Action("VerDetallePartido",new {idPartido = item.IdPartido})'>
+            <img src="@item.Logo">
+            <h1>@item.Nombre</h1>
+        </a>
     </section>
    }
-    <form action='@Url.Action("AgregarPartido")'> 
-    <h3>Nombre:</h3><input type="text" name="Nombre"><br>
-    <h3>Logo:</h3><input type="text" name="Logo"><br>
-    <h3>WebSite:</h3><input type="text" name="SitioWeb"><br>
-    <h3>Fecha Fundacion:</h3><input type="date" name="FechaFundacion"><br>
-    <h3>Cantidad Diputados:</h3><input type="number" name="CantidadDiputados"><br>
-    <h3>Cantidad Senadores:</h3><input type="number" name="CantidadSenadores"><br>
-    <input type="submit" value="Crear Partido">
-    </form>
+    <a href='@Url.Action("AgregarPartido")'><img src="~/img/sum-icon.png"></a>
+   </main>
+    
 
 </div>
