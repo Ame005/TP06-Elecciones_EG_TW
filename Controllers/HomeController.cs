@@ -40,7 +40,8 @@ public class HomeController : Controller
     }
     public IActionResult EliminarPartido(int idPartido){
         BD.EliminarPartido(idPartido);
-        return View(Index);
+        ViewBag.ListaPartido = BD.ListarPartidos();
+        return View("Index");
     }
     public IActionResult EliminarCandidato(int idCandidato, int idPartido){
         /*eliminar candidato

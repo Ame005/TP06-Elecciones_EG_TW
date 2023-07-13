@@ -7,8 +7,8 @@ public class BD{
     private static List<Candidato> ListCandidatos = new List<Candidato>();
     public static void AgregarCandidato(Candidato candidato){
         using (SqlConnection db = new SqlConnection(ConnectionString)){
-            string sql = "INSER INTO Candidato(IdCandidato,IdPartido,Apellido,Nombre,FechaNacimiento,Foto,Postulacion) VALUES (@pIdCandidato,@pIdPartido,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pPostulacion)";
-            db.Execute(sql, new { pIdCandidato = candidato.IdCandidato, pIdPartido = candidato.IdPartido, pApellido = candidato.Apellido, pNombre = candidato.Nombre, pNacimiento = candidato.FechaNacimiento, pFoto = candidato.Foto, pPostulacion = candidato.Postulacion});
+            string sql = "INSER INTO Candidato(IdPartido,Apellido,Nombre,FechaNacimiento,Foto,Postulacion) VALUES (@pIdCandidato,@pIdPartido,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pPostulacion)";
+            db.Execute(sql, new { pIdPartido = candidato.IdPartido, pApellido = candidato.Apellido, pNombre = candidato.Nombre, pNacimiento = candidato.FechaNacimiento, pFoto = candidato.Foto, pPostulacion = candidato.Postulacion});
         }
         //agregar candidato a BD
     }
@@ -24,8 +24,8 @@ public class BD{
     }
     public static void AgregarPartido(Partido partido){
         using (SqlConnection db = new SqlConnection(ConnectionString)){
-            string sql = "INSER INTO Partido(IdPartido,Nombre,Logo,SitioWeb,FechaFundacion,CantidadDiputados,CantidadSenadores) VALUES (@pIdPartido,@pNombre,@pLogo,@pSitioWeb,@pFechaFundacion,@pCantidadDiputados,@pCantidadSenadores)";
-            db.Execute(sql, new { pIdPartido = partido.IdPartido, pNombre = partido.Nombre, pLogo = partido.Logo, pSitioWeb = partido.SitioWeb, pFechaFundacion = partido.FechaFundacion, pCantidadDiputados = partido.CantidadDiputados, pCantidadSenadores = partido.CantidadSenadores});
+            string sql = "INSERT INTO Partido(Nombre,Logo,SitioWeb,FechaFundacion,CantidadDiputados,CantidadSenadores) VALUES (@pNombre,@pLogo,@pSitioWeb,@pFechaFundacion,@pCantidadDiputados,@pCantidadSenadores)";
+            db.Execute(sql, new {  pNombre = partido.Nombre, pLogo = partido.Logo, pSitioWeb = partido.SitioWeb, pFechaFundacion = partido.FechaFundacion, pCantidadDiputados = partido.CantidadDiputados, pCantidadSenadores = partido.CantidadSenadores});
         }
         //agregar candidato a BD
     }
@@ -69,13 +69,13 @@ public class BD{
         return ListPartidos;
     }
     //List<Candidato> llama a la clase
-    public static List<Candidato> ListarCandidatos(int IdPartido)
+    public static List<Candidato> ListarCandidatos(int idPartido)
     {
        List <Candidato> ListCandidatos = new List<Candidato>();
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
-            string sql = "SELECT * FROM Candidato WHERE ID_Partido = @IdPartido";
-            ListCandidatos = db.Query<Candidato>(sql, new{IDPartido=IdPartido}).ToList();
+            string sql = "SELECT * FROM Candidato WHERE IdPartido = @IdPartido";
+            ListCandidatos = db.Query<Candidato>(sql, new{IdPartido=idPartido}).ToList();
         }
         return ListCandidatos;
     }

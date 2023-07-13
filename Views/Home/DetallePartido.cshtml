@@ -19,8 +19,9 @@
                 <img src="@item.Foto">
                 <h1>@item.Nombre @item.Apellido</h1>
                 </a>
+                <a href='@Url.Action("EliminarCandidato",new {idCandidato = item.IdCandidato,idPartido=item.IdPartido})'><img src="~/img/tachoBasura.jpg"></a>
             </section>
         }
-        <a href='@Url.Action("AgregarCandidato")'><img src="~/img/sum-icon.png"></a>
+        <a class="icono-suma" href='@Url.Action("AgregarCandidato")'><img src="~/img/agregar.png"></a>
     </section>
 </div>

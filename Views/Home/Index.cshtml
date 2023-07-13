@@ -10,9 +10,10 @@
             <img src="@item.Logo">
             <h1>@item.Nombre</h1>
         </a>
+        <a href='@Url.Action("EliminarPartido",new {idPartido=item.IdPartido})'><img src="~/img/tachoBasura.jpg"></a>
     </section>
    }
-    <a href='@Url.Action("AgregarPartido")'><img src="~/img/sum-icon.png"></a>
+    <div class="icono-suma"><a href='@Url.Action("AgregarPartido")'><img src="~/img/agregar.png"></a></div>
    </main>
     
 
