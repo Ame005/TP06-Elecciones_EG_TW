@@ -29,12 +29,15 @@ public class BD{
         }
         //agregar candidato a BD
     }
-    public static int EliminarPartido(int idPartido){
+    public static int EliminarPartido(int idPartido)
+    {
         int regEliminado=0;
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
             string sql = "DELETE FROM Partido WHERE IdPartido = @pidPartido";
+            string sql1= "DELETE FROM Candidato WHERE IdPartido = @pidPartido";
             regEliminado = db.Execute(sql, new { pidPartido = idPartido });
+            db.Execute(sql1, new {pidPartido = idPartido});
         }
         return regEliminado;
     }

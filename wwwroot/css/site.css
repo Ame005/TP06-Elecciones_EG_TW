@@ -64,7 +64,7 @@ nav ul li a
     color: #FFFF;
 }
 /*CSS INDEX*/
-.lista-partidos-candidatos{
+.partidoOcandidato{
   border: 2px solid black;
   background-color: #FFF;
   width: 20%;
@@ -73,21 +73,21 @@ nav ul li a
   justify-content: center;
   align-items: center;
 }
-.lista-partidos-candidatos h1
+.partidoOcandidato h1
 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-decoration: none;
   color: #0087b8;
   text-align: center;
 }
-.lista-partidos-candidatos img
+.partidoOcandidato img
 {
   width: 300px;
   height: auto;
   margin: 5px;
 }
 
-.partidoOcandidato{
+.lista-partidos-candidatos{
   margin-left: 25px;
   display: flex;
   flex-wrap: wrap;
