@@ -9,6 +9,10 @@ html {
     font-size: 16px;
   }
 }
+img{
+  width: 100%;
+  height: auto;
+}
 /*Agregar botón*/
 .icono-suma{
   display: flex;
@@ -103,8 +107,8 @@ nav ul li a
   flex-wrap: wrap;
 }
 
-/*CSS DetallePartido*/
-.info-partido{
+/*CSS DetallePartido DetalleCandidato*/
+.info-partido .info-candidato{
   margin: 3%,0,3%,2%;
   display: flex;
   flex-direction: row;
@@ -112,10 +116,36 @@ nav ul li a
   justify-content: space-around;
 }
 
-.partido-especificaciones{
-  
+.especificaciones{
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
 }
 
+/*ELECCIONES*/
+.elecciones-info
+{
+  margin: 2%;
+  margin-top: 1%;
+  display: flex;
+  align-items: center;
+}
+.elecciones-info h1
+{
+  color:#37BBED;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.elecciones-info h2
+{
+  color:#070025;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.elecciones-info p
+{
+  font-size: 2%;
+  text-align: justify;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 /*Formulario*/
 .gran-form{
   text-align: center;
