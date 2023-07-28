@@ -9,10 +9,7 @@ html {
     font-size: 16px;
   }
 }
-img{
-  width: 100%;
-  height: auto;
-}
+
 /*Agregar botón*/
 .icono-suma{
   display: flex;
@@ -125,27 +122,72 @@ nav ul li a
 /*ELECCIONES*/
 .elecciones-info
 {
-  margin: 2%;
-  margin-top: 1%;
+  margin: 3%;
+  margin-top: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+.elecciones-info div img{
+  
+  margin: 0;
+  float:left;
 }
 .elecciones-info h1
 {
-  color:#37BBED;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  clear: both;
+  font-size: 40px;
+  color:black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .elecciones-info h2
 {
-  color:#070025;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 8px;
+  float: left;
+  font-size: 2rem;
+  color:#0072bb;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .elecciones-info p
 {
-  font-size: 2%;
+  color: black;
+  font-size: 20px;
   text-align: justify;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+#equipo-electoral{
+  width: 80%;
+  border-radius: 2%;
+  border: 5px solid rgb(29, 29, 121);
+}
+#equipo-electoral img{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  clear: both;
+  width: 100%;
+}
+#equipo-electoral h3{
+  margin: 1%;
+  margin-left: 1%;
+  color: black;
+  text-decoration: none;
+}
+#equipo-electoral div{
+  margin: 1%;
+  margin-bottom: 0;
+  width: 12%;
+  background-color: #c9f0ff;
+  border: 2px solid #0087b8;
+}
+#equipo-electoral div p{
+  
+  margin:3px;
+  text-align:center;
+}
+#equipo-electoral p{
+  margin: 1%;
+}
+
+
 /*Formulario*/
 .gran-form{
   text-align: center;
