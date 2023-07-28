@@ -208,3 +208,31 @@ nav ul li a
   border: #96b8c5;
   font-size: 150%;
 }
+
+/*creditos*/
+.creditos{
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: space-around;
+}
+.creditos div{
+  width: 28%;
+  border: 5px solid #0072bb;
+}
+.creditos div img{
+  width: 100%;
+}
+.creditos div h3{
+  text-align: center;
+  color:#0087b8 ;
+}
+.creditos div p{
+  text-align: center;
+}
+.creditos main{
+  margin: 3%;
+  background-color: rgb(255, 255, 149);
+  border: 2px solid black;
+}
+/**/
