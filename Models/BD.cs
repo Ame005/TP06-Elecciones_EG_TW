@@ -7,8 +7,8 @@ public class BD{
     private static List<Candidato> ListCandidatos = new List<Candidato>();
     public static void AgregarCandidato(Candidato candidato){
         using (SqlConnection db = new SqlConnection(ConnectionString)){
-            string sql = "INSER INTO Candidato(IdPartido,Apellido,Nombre,FechaNacimiento,Foto,Postulacion) VALUES (@pIdCandidato,@pIdPartido,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pPostulacion)";
-            db.Execute(sql, new { pIdPartido = candidato.IdPartido, pApellido = candidato.Apellido, pNombre = candidato.Nombre, pNacimiento = candidato.FechaNacimiento, pFoto = candidato.Foto, pPostulacion = candidato.Postulacion});
+            string sql = "INSERT INTO Candidato(IdPartido,Apellido,Nombre,FechaNacimiento,Foto,Postulacion) VALUES (@pIdPartido,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pPostulacion)";
+            db.Execute(sql, new { pIdPartido = candidato.IdPartido, pApellido = candidato.Apellido, pNombre = candidato.Nombre, pFechaNacimiento = candidato.FechaNacimiento, pFoto = candidato.Foto, pPostulacion = candidato.Postulacion});
         }
         //agregar candidato a BD
     }
@@ -27,7 +27,7 @@ public class BD{
             string sql = "INSERT INTO Partido(Nombre,Logo,SitioWeb,FechaFundacion,CantidadDiputados,CantidadSenadores) VALUES (@pNombre,@pLogo,@pSitioWeb,@pFechaFundacion,@pCantidadDiputados,@pCantidadSenadores)";
             db.Execute(sql, new {  pNombre = partido.Nombre, pLogo = partido.Logo, pSitioWeb = partido.SitioWeb, pFechaFundacion = partido.FechaFundacion, pCantidadDiputados = partido.CantidadDiputados, pCantidadSenadores = partido.CantidadSenadores});
         }
-        //agregar candidato a BD
+        //agregar partido a BD
     }
     public static int EliminarPartido(int idPartido)
     {
