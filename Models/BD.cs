@@ -1,14 +1,14 @@
 using System.Data.SqlClient;
 using Dapper;
 namespace TP06Elecciones_Gayoso_TorreWalsh;
-public class BD{
+public class BD {
      private static string ConnectionString = @"Server=localhost;DataBase=Elecciones;Trusted_Connection=True;";
     private static List<Partido> ListPartidos = new List<Partido>();
     private static List<Candidato> ListCandidatos = new List<Candidato>();
     public static void AgregarCandidato(Candidato candidato){
         using (SqlConnection db = new SqlConnection(ConnectionString)){
-            string sql = "INSER INTO Candidato(IdPartido,Apellido,Nombre,FechaNacimiento,Foto,Postulacion) VALUES (@pIdCandidato,@pIdPartido,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pPostulacion)";
-            db.Execute(sql, new { pIdPartido = candidato.IdPartido, pApellido = candidato.Apellido, pNombre = candidato.Nombre, pNacimiento = candidato.FechaNacimiento, pFoto = candidato.Foto, pPostulacion = candidato.Postulacion});
+            string sql = "INSERT INTO Candidato(IdPartido,Apellido,Nombre,FechaNacimiento,Foto,Postulacion) VALUES (@pIdPartido,@pApellido,@pNombre,@pFechaNacimiento,@pFoto,@pPostulacion)";
+            db.Execute(sql, new { pIdPartido = candidato.IdPartido, pApellido = candidato.Apellido, pNombre = candidato.Nombre, pFechaNacimiento = candidato.FechaNacimiento, pFoto = candidato.Foto, pPostulacion = candidato.Postulacion});
         }
         //agregar candidato a BD
     }
