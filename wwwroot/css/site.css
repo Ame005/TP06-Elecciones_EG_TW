@@ -135,7 +135,9 @@ nav ul li a
   align-items: center;
   border: 1px solid black;
 }
-
+.candidato-particulas:hover{
+  
+}
 /*ELECCIONES*/
 .elecciones-info
 {
@@ -225,7 +227,10 @@ nav ul li a
   border: #96b8c5;
   font-size: 150%;
 }
-
+input[type=text]:focus, input[type=date]:focus, input[type=number]:focus {
+  background-color: #0087b8 70%;
+  border: 2px solid #0072bb;
+}
 /*creditos*/
 .creditos{
   display: flex;
