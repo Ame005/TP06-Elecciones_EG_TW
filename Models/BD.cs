@@ -36,7 +36,7 @@ public class BD {
         {
             string sql = "DELETE FROM Partido WHERE IdPartido = @pidPartido";
             string sql1= "DELETE FROM Candidato WHERE IdPartido = @pidPartido";
-            //regEliminado = db.Execute(sql, new { pidPartido = idPartido });
+            regEliminado = db.Execute(sql, new { pidPartido = idPartido });
             db.Execute(sql1, new {pidPartido = idPartido});
         }
         return regEliminado;

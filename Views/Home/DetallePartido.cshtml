@@ -11,17 +11,19 @@
             <p><b>Cantidad de senadores:</b>@ViewBag.detallePartido.CantidadSenadores</p>
         </div>
     </section>
-    <section class="lista-candidatos">
+    <ul class="lista-candidatos">
         @foreach (Candidato item in ViewBag.partidoCandidato)
         {
-            <div>
-                <a href='@Url.Action("VerDetalleCandidato", new {idPartido = ViewBag.detallePartido.IdPartido})'>
-                <img src="@item.Foto">
-                <h1>@item.Nombre @item.Apellido</h1>
-                </a>
-                <a href='@Url.Action("EliminarCandidato",new {idCandidato = item.IdCandidato,idPartido=item.IdPartido})'><img src="~/img/tachoBasura.jpg"></a>
-            </div>
+            <li>
+                <div>
+                    <a href='@Url.Action("VerDetalleCandidato", new {idCandidato = item.IdCandidato})'>
+                    <h1>@item.Nombre @item.Apellido</h1>
+                    <img src="@item.Foto">
+                    </a>
+                    <a href='@Url.Action("EliminarCandidato",new {idCandidato = item.IdCandidato,idPartido=item.IdPartido})'><img src="~/img/tachoBasura.jpg" class="tacho"></a>
+                </div>
+            </li>
         }
         <a class="icono-suma" href='@Url.Action("AgregarCandidato",new {idPartido=@ViewBag.detallePartido.IdPartido})'><img src="~/img/agregar.png"></a>
-    </section>
+    </ul>
 </div>
