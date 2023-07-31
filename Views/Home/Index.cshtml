@@ -6,11 +6,15 @@
    @foreach (Partido item in ViewBag.ListaPartido)
    {
     <section class="partidoOcandidato">
-        <a href='@Url.Action("VerDetallePartido",new {idPartido = item.IdPartido})'>
-            <img src="@item.Logo">
-            <h1>@item.Nombre</h1>
-        </a>
-        <a href='@Url.Action("EliminarPartido",new {idPartido=item.IdPartido})'><img src="~/img/tachoBasura.jpg"></a>
+        <div>
+            <a href='@Url.Action("VerDetallePartido",new {idPartido = item.IdPartido})'>
+                <img src="@item.Logo">
+                <h1>@item.Nombre</h1>
+            </a>
+        </div>
+        <div>
+            <a href='@Url.Action("EliminarPartido",new {idPartido=item.IdPartido})'><img src="~/img/tachoBasura.jpg"></a>
+        </div>
     </section>
    }
     <div class="icono-suma"><a href='@Url.Action("AgregarPartido")'><img src="~/img/agregar.png"></a></div>

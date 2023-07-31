@@ -1,7 +1,7 @@
 using System.Data.SqlClient;
 using Dapper;
 namespace TP06Elecciones_Gayoso_TorreWalsh;
-public class BD{
+public class BD {
      private static string ConnectionString = @"Server=localhost;DataBase=Elecciones;Trusted_Connection=True;";
     private static List<Partido> ListPartidos = new List<Partido>();
     private static List<Candidato> ListCandidatos = new List<Candidato>();
@@ -17,7 +17,7 @@ public class BD{
         int regEliminado = 0;
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
-            string sql = "DELETE * FROM Candidato WHERE IdCandidato = @pidCandidato";
+            string sql = "DELETE FROM Candidato WHERE IdCandidato = @pidCandidato";
             regEliminado = db.Execute(sql, new { pidCandidato = idCandidato });
         }
         return regEliminado;
@@ -25,7 +25,7 @@ public class BD{
     public static void AgregarPartido(Partido partido){
         using (SqlConnection db = new SqlConnection(ConnectionString)){
             string sql = "INSERT INTO Partido(Nombre,Logo,SitioWeb,FechaFundacion,CantidadDiputados,CantidadSenadores) VALUES (@pNombre,@pLogo,@pSitioWeb,@pFechaFundacion,@pCantidadDiputados,@pCantidadSenadores)";
-            db.Execute(sql, new {  pNombre = partido.Nombre, pLogo = partido.Logo, pSitioWeb = partido.SitioWeb, pFechaFundacion = partido.FechaFundacion, pCantidadDiputados = partido.CantidadDiputados, pCantidadSenadores = partido.CantidadSenadores});
+            db.Execute(sql, new {pNombre = partido.Nombre, pLogo = partido.Logo, pSitioWeb = partido.SitioWeb, pFechaFundacion = partido.FechaFundacion, pCantidadDiputados = partido.CantidadDiputados, pCantidadSenadores = partido.CantidadSenadores});
         }
         //agregar partido a BD
     }
@@ -36,7 +36,7 @@ public class BD{
         {
             string sql = "DELETE FROM Partido WHERE IdPartido = @pidPartido";
             string sql1= "DELETE FROM Candidato WHERE IdPartido = @pidPartido";
-            regEliminado = db.Execute(sql, new { pidPartido = idPartido });
+            //regEliminado = db.Execute(sql, new { pidPartido = idPartido });
             db.Execute(sql1, new {pidPartido = idPartido});
         }
         return regEliminado;

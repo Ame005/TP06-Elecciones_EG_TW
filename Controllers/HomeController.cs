@@ -18,7 +18,7 @@ public class HomeController : Controller
         ViewBag.detalleCandidato = BD.VerInfoCandidato(idCandidato);
         return View("DetalleCandidato");
     }
-    public IActionResult AgregarCandidato(int idPartido){
+    public IActionResult AgregarCandidato(int idPartido){       
         ViewBag.ListaIdPartidos = idPartido;
         return View("CandidatoFormulario");
     }
@@ -30,7 +30,7 @@ public class HomeController : Controller
         BD.AgregarCandidato(candidato);
         ViewBag.detallePartido = BD.VerInfoPartido(candidato.IdPartido);
         ViewBag.detalleCandidato = BD.ListarCandidatos(candidato.IdPartido);
-        return RedirectToAction("DetallePartido", new { idPartido = candidato.IdPartido});
+        return RedirectToAction("VerDetallePartido", new { idPartido = candidato.IdPartido});
     }
     [HttpPost]
     public IActionResult GuardarPartido(Partido partido){
@@ -48,7 +48,7 @@ public class HomeController : Controller
         Escape en partido candidatos - candidato seleccionado
         */
         BD.EliminarCandidato(idCandidato);
-        return RedirectToAction("DetallePartido", new { idPartido = idPartido});
+        return RedirectToAction("VerDetallePartido", new { idPartido = idPartido});
     }
     public IActionResult Elecciones(){
         return View("EleccionesInfo");
